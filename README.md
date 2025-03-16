@@ -1,4 +1,4 @@
-# PawPost - A Social Platform for Pet Owners
+# PawPost - A Social Platform for Pet Owners 🐾
 
 ---
 
@@ -9,7 +9,7 @@ PawPost is a social media platform designed exclusively for pet lovers. It allow
 
 ---
 
-## Built With
+## Built With 🛠️
 - HTML
 - SCSS
 - JavaScript (ES6+)
@@ -17,20 +17,20 @@ PawPost is a social media platform designed exclusively for pet lovers. It allow
 
 ---
 
-## Live Demo
+## Live Demo 🚀
 Check out the live version of PawPost [here](https://pawpost.netlify.app/).
 
 ---
 
-## Features
-- **Dynamic Post Feed:** View and interact with posts from pet owners.
-- **Profile Pages:** Click on a user's name to view all their posts.
-- **Sorting System:** Sort posts by newest or oldest.
-- **Fully Responsive:** Optimized for all devices.
+## Features ✨
+- **🐶 Dynamic Post Feed:** View and interact with posts from pet owners.
+- **📸 Profile Pages:** Click on a user's name to view all their posts.
+- **🕘 Sorting System:** Sort posts by newest or oldest.
+- **📱 Fully Responsive:** Optimized for all devices.
 
 ---
 
-## Installation
+## Installation 💻
 To run PawPost locally:
 
 1. **Clone the repository**:
@@ -57,7 +57,7 @@ To run PawPost locally:
 
 ---
 
-## Usage
+## Usage 🐕‍🦺
 1. **View posts** from other pet owners on the homepage.
 2. **Sort posts** using the dropdown menu (Newest to Oldest or vice versa).
 3. **Click on an author's name** to view their profile and all their posts.
@@ -65,7 +65,7 @@ To run PawPost locally:
 
 ---
 
-## Contact Me
+## Contact Me 📬
 
 - [LinkedIn](https://www.linkedin.com/in/petter-r%C3%B8nning-80602613a/)
 - [Portfolio](https://your-portfolio-link.com/)
@@ -73,5 +73,11 @@ To run PawPost locally:
 
 ---
 
-## Credits
-This project was built by me with the help of **ChatGPT** and **deepseek** which assisted in setting up **relevant JSDoc comments** and improving the structure of the **README**, **https://github.com/martink-rsa** - my fantastic teacher who has an incredible patience with me, and motivated me to get through this. 
+## Credits 🎉
+This project was built by me with the help of **ChatGPT** and **DeepSeek**, which assisted in setting up **relevant JSDoc comments** and improving the structure of the **README**.
+
+A huge thank you to **Martin Krüger**, my fantastic teacher who has incredible patience with me and motivated me to get through this. 
+
+[GitHub Repository](https://github.com/martink-rsa)  
+[Homepage](https://martinkruger.com/)
+
