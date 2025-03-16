@@ -1,9 +1,7 @@
 // base url: https://v2.api.noroff.dev/
 // register part /auth/register
 
-const BASE_API_URL = 'https://v2.api.noroff.dev';
-
-const REGISTER_API_URL = BASE_API_URL + '/auth/register';
+import { REGISTER_API_URL } from "../../scripts/constants";
 
 const registerForm = document.getElementById('register-form');
 const nameInput = document.getElementById('name');
