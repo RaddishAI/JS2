@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawPost - Login</title>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <script type="module" src="login.js"></script>
 </head>
 
 <body>
@@ -24,6 +25,15 @@
 
     <main>
         <h1>Login</h1>
+        <form id="login-form" style="display: flex; flex-direction: column">
+          <label for="email">Email</label>
+          <input id="email" type="email" value="petterExample1@stud.noroff.no" />
+
+          <label for="password">Password</label>
+          <input id="password" type="password" value="petterExample1" />
+          
+          <button>Submit</button>
+        </form>
     </main>
     
 
