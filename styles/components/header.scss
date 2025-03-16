@@ -1,0 +1,35 @@
+@use "../base/variables";
+@use "../base/mixins";
+
+header {
+  background: variables.$primary-color;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: variables.$text-light;
+
+  .logo {
+    font-size: 1.8rem;
+    font-family: variables.$font-primary;
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+
+      li {
+        a {
+          text-decoration: none;
+          color: variables.$text-light;
+          font-size: 1rem;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

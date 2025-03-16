@@ -27,7 +27,7 @@ async function registerUser(userData) {
             throw new Error(data?.errors?.[0]?.message || "Unknown error");
         }
         console.log("Registration successful", data);
-        alert("🎉 Registration successful! You can now log in.");
+        alert("Registration successful! You can now log in.");
 
         setTimeout(() => {
             window.location.href = "../login/login.html";
@@ -67,7 +67,7 @@ async function registerUser(userData) {
         }
     
         console.log("Registration successful", json);
-        alert("🎉 Registration successful! You can now log in.");
+        alert(" Registration successful! You can now log in.");
 
         setTimeout(() => {
             window.location.href ="../login/login.html";

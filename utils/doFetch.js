@@ -18,6 +18,10 @@ export async function doFetch(url, initialOptions = {}, shouldUseAuth = false) {
       if (shouldUseAuth) {
         const accessToken = localStorage.getItem('accessToken');
         customOptions.headers.Authorization = `Bearer ${accessToken}`;
+        if (!accessToken) {
+            console.error("No access token found! User must log in.");
+            return { ok: false, data: { error: "Unauthorized. No access token." } };
+        }
         customOptions.headers['X-Noroff-API-Key'] =
           '16f09ba4-96fb-494a-8c62-69b71a3aaa80';
       }

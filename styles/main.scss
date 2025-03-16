@@ -1,4 +1,7 @@
-@import 'variables';
-@import 'mixins';
-@import 'components/header';
-@import 'components/footer';
+@use "base/variables";
+@use "base/mixins";
+@use "base/reset";
+@use "base/styles";
+@use "components/header";
+@use "components/footer";
+@use "components/posts";

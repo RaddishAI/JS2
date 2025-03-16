@@ -1,0 +1,64 @@
+@use "variables";
+@use "mixins";
+
+body {
+  font-family: variables.$font-secondary;
+  background: variables.$background-light;
+  color: variables.$text-dark;
+  line-height: 1.6;
+}
+
+// General Page Layout
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+// Grid Layout (For Post Feeds or Content Sections)
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+// Sidebar and Main Content Layout
+.page-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  
+  .main-content {
+    flex: 3;
+    min-width: 60%;
+  }
+
+  .sidebar {
+    flex: 1;
+    min-width: 30%;
+    background: variables.$white;
+    padding: 20px;
+    border-radius: variables.$border-radius;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Buttons (Can Be Used Globally)
+.button {
+  @include mixins.button-style;
+}
+
+// Mobile Responsive Design
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    min-width: 100%;
+  }
+}

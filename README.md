@@ -11,3 +11,4 @@ A social media platform for pet lovers.
 1. Clone the repository.
 2. Install dependencies: `npm install`.
 3. Run the project: `npm start`.
+

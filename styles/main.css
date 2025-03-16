@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f5f6fa;
+  color: #2d3436;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f5f6fa;
+  color: #2d3436;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.page-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.page-layout .main-content {
+  flex: 3;
+  min-width: 60%;
+}
+.page-layout .sidebar {
+  flex: 1;
+  min-width: 30%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 20px;
+  background: #74b9ff;
+  color: #ecf0f1;
+  text-align: center;
+  transition: background 0.3s ease-in-out;
+}
+.button:hover {
+  background: rgb(65, 159.3165467626, 255);
+}
+
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+  }
+  .sidebar {
+    min-width: 100%;
+  }
+}
+header {
+  background: #74b9ff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ecf0f1;
+}
+header .logo {
+  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 1rem;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #ff7675;
+  text-align: center;
+  padding: 15px;
+  color: #ecf0f1;
+  font-size: 0.9rem;
+}
+
+.post-container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+.post-container:hover {
+  transform: translateY(-5px);
+}
+.post-container .post-text-container h2 {
+  font-size: 1.6rem;
+  color: #74b9ff;
+  font-family: "Poppins", sans-serif;
+}
+.post-container .post-text-container p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.post-container .post-text-container .post-date {
+  font-size: 0.9rem;
+  color: #ff7675;
+}
+.post-container .post-image-container {
+  margin-top: 15px;
+  text-align: center;
+}
+.post-container .post-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/*# sourceMappingURL=main.css.map */
