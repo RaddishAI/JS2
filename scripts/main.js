@@ -3,8 +3,11 @@ import { doFetch } from "../utils/doFetch.js";
 
 const displayContainer = document.getElementById("display-container");
 const sortSelect = document.getElementById("sort-select");
+const paginationContainer = document.getElementById("pagination");
 
-let posts = []; // Store posts globally
+let posts = [];
+let currentPage = 1;
+const postsPerPage = 10;
 
 /**
  * Fetches posts from the API, ensuring author data is included.
@@ -23,8 +26,6 @@ async function getPosts() {
     }
 
     console.log("API Response Data:", response.data);
-
-    // Extract posts correctly from response
     return response.data.data || [];
   } catch (error) {
     console.error("Error fetching posts:", error);
@@ -50,14 +51,6 @@ function formatDate(isoString) {
 /**
  * Generates HTML for a post element.
  * @param {Object} post - The post data.
- * @param {string} post.title - The title of the post.
- * @param {string} post.body - The body content of the post.
- * @param {Object} post.media - The media object (image).
- * @param {string} post.media.url - The URL of the post image.
- * @param {string} post.media.alt - The alt text for the post image.
- * @param {string} post.updated - The last updated date of the post.
- * @param {Object} post.author - The author object.
- * @param {string} post.author.name - The author's name.
  * @returns {HTMLElement} - The generated post container element.
  */
 function generatePostHtml(post) {
@@ -69,9 +62,7 @@ function generatePostHtml(post) {
   const postTextContainer = document.createElement("div");
   postTextContainer.classList.add("post-text-container");
 
-
   const authorName = post.author?.name || "Unknown Author";
-
   const author = document.createElement("p");
   author.classList.add("post-author");
   author.innerHTML = `Posted by: <a href="profile.html?username=${authorName}" class="author-link">${authorName}</a>`;
@@ -101,7 +92,6 @@ function generatePostHtml(post) {
   imageContainer.append(postDate);
 
   postContainer.append(postTextContainer, imageContainer);
-
   return postContainer;
 }
 
@@ -115,13 +105,12 @@ function sortPosts(posts, order = "newest") {
   return [...posts].sort((a, b) => {
     const dateA = new Date(a.updated);
     const dateB = new Date(b.updated);
-    
     return order === "newest" ? dateB - dateA : dateA - dateB;
   });
 }
 
 /**
- * Generates and displays posts on the page.
+ * Generates and displays posts with pagination.
  * @param {string} order - The sorting order ("newest" or "oldest").
  */
 function generateAndDisplayPosts(order = "newest") {
@@ -132,29 +121,47 @@ function generateAndDisplayPosts(order = "newest") {
     return;
   }
 
-  // Sort posts based on dropdown selection
   const sortedPosts = sortPosts(posts, order);
+  const startIndex = (currentPage - 1) * postsPerPage;
+  const endIndex = startIndex + postsPerPage;
+  const paginatedPosts = sortedPosts.slice(startIndex, endIndex);
 
-  sortedPosts.forEach((post) => {
+  paginatedPosts.forEach((post) => {
     displayContainer.append(generatePostHtml(post));
   });
+
+  updatePaginationControls(sortedPosts.length);
 }
 
 /**
- * Handles sorting selection changes and updates the displayed posts.
+ * Updates the pagination controls dynamically.
+ * @param {number} totalPosts - The total number of posts.
  */
+function updatePaginationControls(totalPosts) {
+  paginationContainer.innerHTML = "";
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const button = document.createElement("button");
+    button.textContent = i;
+    button.classList.add("pagination-button");
+    if (i === currentPage) button.classList.add("active");
+    button.addEventListener("click", () => {
+      currentPage = i;
+      generateAndDisplayPosts(sortSelect.value);
+    });
+    paginationContainer.appendChild(button);
+  }
+}
+
 sortSelect.addEventListener("change", function () {
-  const selectedOrder = this.value;
-  console.log(`Sorting posts: ${selectedOrder}`);
-  generateAndDisplayPosts(selectedOrder);
+  currentPage = 1;
+  generateAndDisplayPosts(this.value);
 });
 
-/**
- * Main function to initialize the app, fetch posts, and display them.
- */
 async function main() {
-  posts = await getPosts(); // Store posts globally
-  generateAndDisplayPosts(sortSelect.value); // Ensure sorting applies
+  posts = await getPosts();
+  generateAndDisplayPosts(sortSelect.value);
 }
 
 main();

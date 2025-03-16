@@ -72,6 +72,36 @@ body {
     min-width: 100%;
   }
 }
+@media (max-width: 768px) {
+  .post-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .post-text-container {
+    font-size: 14px;
+  }
+  .post-image-container img {
+    width: 100%;
+    height: auto;
+  }
+  #pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  }
+  .pagination-button {
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+  }
+  .pagination-button.active {
+    background-color: var(--accent-hover);
+  }
+}
 header {
   background: #74b9ff;
   padding: 15px 20px;
@@ -107,37 +137,33 @@ footer {
 }
 
 .post-container {
-  background: #ffffff;
-  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--primary-bg);
+  border-radius: 10px;
   padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  margin: 20px auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.post-container:hover {
-  transform: translateY(-5px);
-}
-.post-container .post-text-container h2 {
-  font-size: 1.6rem;
-  color: #74b9ff;
-  font-family: "Poppins", sans-serif;
-}
-.post-container .post-text-container p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-.post-container .post-text-container .post-date {
-  font-size: 0.9rem;
-  color: #ff7675;
+.post-container .post-text-container {
+  text-align: left;
 }
 .post-container .post-image-container {
-  margin-top: 15px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .post-container .post-image-container img {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 8px;
+}
+.post-container .post-date {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
 
 /*# sourceMappingURL=main.css.map */

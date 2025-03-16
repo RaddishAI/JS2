@@ -1,7 +1,8 @@
-@use "base/variables";
+@use "base/variables"; 
 @use "base/mixins";
 @use "base/reset";
 @use "base/styles";
+@use "base/responsive";
 @use "components/header";
 @use "components/footer";
 @use "components/posts";

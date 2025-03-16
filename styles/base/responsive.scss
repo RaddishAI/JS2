@@ -1,0 +1,35 @@
+@media (max-width: 768px) {
+    .post-container {
+      max-width: 90%;
+      padding: 15px;
+    }
+  
+    .post-text-container {
+      font-size: 14px;
+    }
+  
+    .post-image-container img {
+      width: 100%;
+      height: auto;
+    }
+  
+    #pagination {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 20px;
+    }
+  
+    .pagination-button {
+      padding: 8px;
+      font-size: 14px;
+      border: none;
+      background-color: var(--accent-color);
+      color: white;
+      cursor: pointer;
+    }
+  
+    .pagination-button.active {
+      background-color: var(--accent-hover);
+    }
+  }
